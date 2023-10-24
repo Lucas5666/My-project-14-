@@ -544,8 +544,7 @@ GameObject:
   - component: {fileID: 1487919315701569970}
   - component: {fileID: 859974134206059417}
   - component: {fileID: 2237371564897722802}
-  - component: {fileID: 419407739005440450}
-  - component: {fileID: 8684254379479110932}
+  - component: {fileID: 7202507688630373369}
   m_Layer: 0
   m_Name: Slime_1 (1)
   m_TagString: Enemy_1
@@ -621,7 +620,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &419407739005440450
+--- !u!114 &7202507688630373369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -630,37 +629,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6540625627497505946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f953a2c161ec84be1a3e16ea0c925813, type: 3}
+  m_Script: {fileID: 11500000, guid: 86c484dcb0a754db9a6efc7354c4c89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 0
   health: 0
-  navMeshAgent: {fileID: 2237371564897722802}
+  navMeshAgent: {fileID: 0}
   target: {fileID: 0}
   status: 0
   _damageAmount: 0
---- !u!114 &8684254379479110932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6540625627497505946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ea1b06c791b534593e5b88f0d8ae62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDistance: 2
-  attackSpeed: 1
-  Damage: 1
-  Defence: 0
-  HP: 5
-  MaxHP: 5
-  MaxSP: 0
-  SP: 0
-  HitFxPos: {fileID: 0}
-  GiveExp: 0
 --- !u!1 &6890054515843852176
 GameObject:
   m_ObjectHideFlags: 0

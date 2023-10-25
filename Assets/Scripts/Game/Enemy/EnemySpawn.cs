@@ -19,16 +19,16 @@ public class EnemySpawn : MonoBehaviour
         CheckDistance();
     }
     private int spawnedCount;
-    public int maxCount;
+    public int maxCount = 2;
 
-    public int maxDelay = 5;
+    public int maxDelay = 2;
     public GameObject enemy;
 
     //public GameObject player;
 
-    public int Dis;
+    public int Dis = 6;
     public int speed = 2;
-    public GameObject[] GeneratePoint;
+    public GameObject[] GeneratePoint = new GameObject[5];
     private int GeneratePointIndex;
 
     public void CheckDistance()
@@ -59,6 +59,7 @@ public class EnemySpawn : MonoBehaviour
     {
         GeneratePointIndex = Random.Range(0, GeneratePoint.Length);
         GameObject enemyGo = Instantiate(enemy, GeneratePoint[GeneratePointIndex].transform.position, Quaternion.identity);
+        enemyGo.AddComponent<Enemy>();
         enemyGo.AddComponent<NavMeshAgent>();
         enemyGo.GetComponent<NavMeshAgent>().SetDestination(target.position);
     }

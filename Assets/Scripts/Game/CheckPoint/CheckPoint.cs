@@ -5,11 +5,11 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     Transform target = null;
-    //private Transform canvas = null;
+    private Transform canvas = null;
     // Start is called before the first frame update
     void Start()
     {
-        //canvas = GameObject.Find("Canvas").transform;
+        canvas = GameObject.Find("Canvas").transform;
 
         if (GameObject.FindWithTag("Player").transform != null)
         {
@@ -20,13 +20,21 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("开始碰撞了");
+        //Debug.Log("开始碰撞了");
         if (other.gameObject.name == target.gameObject.name)
         {
             Debug.Log("hh");
             UIMgr.Instance.ShowUI(this.gameObject.name);
         }
-        Debug.Log("碰撞结束了");
+        //Debug.Log("碰撞结束了");
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (canvas.Find(this.gameObject.name) != null)
+        {
+            Destroy(canvas.Find(this.gameObject.name).gameObject);
+        }
     }
 
 }

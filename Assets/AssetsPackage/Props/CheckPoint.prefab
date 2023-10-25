@@ -121,6 +121,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DuelArenaPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: DuelArenaPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ca0adf9f25c4de58afec23069bd358, type: 3}
 --- !u!4 &2985585695627908258 stripped
@@ -307,6 +312,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GresslandEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: GresslandEntrance
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ca0adf9f25c4de58afec23069bd358, type: 3}
 --- !u!4 &2985585695106470245 stripped
@@ -393,6 +403,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1065721044199251924, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: MonsterPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
         type: 3}
       propertyPath: m_Name
       value: MonsterPlatform
@@ -492,6 +507,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: FinalPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ca0adf9f25c4de58afec23069bd358, type: 3}
 --- !u!4 &2985585696501040410 stripped
@@ -578,6 +598,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1065721044199251924, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: RiverSidePoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
         type: 3}
       propertyPath: m_Name
       value: RiverSidePoint
@@ -672,6 +697,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GressLandPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: GressLandPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ca0adf9f25c4de58afec23069bd358, type: 3}
 --- !u!4 &2985585696182275356 stripped
@@ -762,6 +792,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummitPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: SummitPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ca0adf9f25c4de58afec23069bd358, type: 3}
 --- !u!4 &2985585696377463457 stripped
@@ -848,6 +883,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1065721044199251924, guid: 13ca0adf9f25c4de58afec23069bd358,
+        type: 3}
+      propertyPath: m_Name
+      value: ElfPoolPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187110042617641977, guid: 13ca0adf9f25c4de58afec23069bd358,
         type: 3}
       propertyPath: m_Name
       value: ElfPoolPoint

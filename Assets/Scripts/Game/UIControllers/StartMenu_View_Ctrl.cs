@@ -55,7 +55,7 @@ public class StartMenu_View_Ctrl: UICtrl
         CP.name = CheckPoint.name;
         for(int i = 0;i< CheckPoint.transform.childCount; i++)
         {
-            CP.transform.GetChild(i).gameObject.AddComponent<CheckPoint>();
+            CP.transform.GetChild(i).GetChild(0).gameObject.AddComponent<CheckPoint>();
         }
 
         //生成boss和slime小怪并添加脚本

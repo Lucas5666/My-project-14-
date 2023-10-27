@@ -7,7 +7,8 @@ public enum AssetsType
     UI = 0,
     Map = 1,
     Char = 2,
-    Prop = 3
+    Prop = 3,
+    Skills = 4
 }
 public class ResMgr : UnitySingleton<ResMgr>
 {
@@ -47,6 +48,9 @@ public class ResMgr : UnitySingleton<ResMgr>
                 break;
             case AssetsType.Prop:
                 root = "Assets/AssetsPackage/Props/";
+                break;
+            case AssetsType.Skills:
+                root = "Assets/AssetsPackage/Skills/";
                 break;
         }
 #if UNITY_EDITOR

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 using Cinemachine;
+using CaiLu_LegendOfValmosian;
 
 public class StartMenu_View_Ctrl: UICtrl 
  {  
@@ -42,6 +43,7 @@ public class StartMenu_View_Ctrl: UICtrl
         GameObject Char1 = GameObject.Instantiate(Charfab);
         Char1.name = Charfab.name;
         Char1.AddComponent<Char_Control>();
+        Char1.AddComponent<PlayerStatus>();
 
 
         //设置相机跟踪

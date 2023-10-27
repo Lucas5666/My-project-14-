@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayState
+public enum PlayAniState
 {
     Invalid = -1,
     Walk = 0,
@@ -19,7 +19,7 @@ public enum PlayState
 public class AnimCtrl : MonoBehaviour
 {
     private Animator anim = null;
-    private int state = (int)PlayState.Invalid;
+    private int state = (int)PlayAniState.Invalid;
 
     public void Init()
     {

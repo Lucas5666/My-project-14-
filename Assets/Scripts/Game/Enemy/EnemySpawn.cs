@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CaiLu_LegendOfValmosian;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -60,6 +61,7 @@ public class EnemySpawn : MonoBehaviour
         GeneratePointIndex = Random.Range(0, GeneratePoint.Length);
         GameObject enemyGo = Instantiate(enemy, GeneratePoint[GeneratePointIndex].transform.position, Quaternion.identity);
         enemyGo.AddComponent<Enemy>();
+        //enemyGo.AddComponent<MonsterStatus>();
         enemyGo.AddComponent<NavMeshAgent>();
         enemyGo.GetComponent<NavMeshAgent>().SetDestination(target.position);
     }

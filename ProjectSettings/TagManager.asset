@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - Enemy_1
+  - Food
+  - Canvas
   layers:
   - Default
   - TransparentFX

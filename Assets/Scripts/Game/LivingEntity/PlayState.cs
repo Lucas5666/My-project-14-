@@ -69,11 +69,20 @@ public class PlayState : LivingEntity
 
         if (health <= 0)
         {
-            SceneManager.LoadScene("Menu");
+            Debug.Log("死了");
         }
 
 
 
     }
+
+    //勋章添加方法 勋章是否添加标志 勋章重置方法（开始游戏时重置）
+
+    //血量显示 变化 血量添加方法
+
+    //是否添加射击功能 添加射击功能
+
+    //
+
 
 }

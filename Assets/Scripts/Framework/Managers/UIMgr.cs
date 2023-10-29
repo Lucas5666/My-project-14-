@@ -6,7 +6,7 @@ using System;
 //UI管理工具
 public class UIMgr : UnitySingleton<UIMgr>
 {
-    private Transform canvas = null;
+    public static Transform canvas = null;
     string ui_Prefab_root = "GUI/UIPrefabs/";
 
     public override  void Awake()
@@ -23,7 +23,7 @@ public class UIMgr : UnitySingleton<UIMgr>
         uiView.name = name;
         if(parent == null)
         {
-            parent = this.canvas.transform;
+            parent = canvas.transform;
         }
         uiView.transform.SetParent(parent, false);
 

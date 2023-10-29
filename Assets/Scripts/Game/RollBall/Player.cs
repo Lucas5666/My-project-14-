@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
             //调出胜利面板
             //winPanel.SetActive(true);
             UIMgr.Instance.ShowUI("RollBallWinPanelView");
-            countDownSecond = 9999999;
+            countDownSecond = -1;
             //调用加血方法 给角色血加满
             ////AddHealth.Add();
             //判断当前关卡是否 已经加过勋章 如果没有才添加勋章
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
 
         }
         //失败 调出失败面板
-        if (score <= 12 && countDownSecond <= 0)
+        if (score < 12 && countDownSecond <= 0)
         {
             //failedPanel.SetActive(true);
             UIMgr.Instance.ShowUI("RollBallFailedPanelView");

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using CaiLu_LegendOfValmosian;
 
 public class RollBallFailedPanelView_Ctrl: UICtrl 
  {
@@ -22,13 +23,15 @@ public class RollBallFailedPanelView_Ctrl: UICtrl
         Destroy(GameObject.Find("RollBallMap"));
         Destroy(this.gameObject);
         Time.timeScale = 1;
-        RiverSidePointView_Ctrl.PlayerGO.SetActive(true);
-
+        PlayerStatus.PlayerGO.SetActive(true);
+        Destroy(TransformHelper.FindChild(UIMgr.canvas, "RollBallScoreView").gameObject);
     }
 
     void onClickTryAgain()
     {
+        Destroy(GameObject.Find("RollBallMap"));
+        Destroy(TransformHelper.FindChild(UIMgr.canvas, "RollBallScoreView").gameObject);
+        RiverSidePointView_Ctrl.InitRollBallGame();
         Destroy(this.gameObject);
-        Player.countDownSecond = 17;
     }
 }

@@ -2,17 +2,16 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using CaiLu_LegendOfValmosian;
 
 public class RiverSidePointView_Ctrl: UICtrl 
  {
-    public static GameObject PlayerGO = null;
     public override void Awake()
     {
         base.Awake();
     }
     void Start()
     {
-        PlayerGO = GameObject.FindWithTag("Player");
         this.AddButtonListener("Exit", onClickExit);
         this.AddButtonListener("Play", onClickPlay);
     }
@@ -23,10 +22,17 @@ public class RiverSidePointView_Ctrl: UICtrl
     }
     void onClickPlay()
     {
+        InitRollBallGame();
+        Destroy(this.gameObject);
+
+    }
+
+    public static void InitRollBallGame()
+    {
+        Player.countDownSecond = 17;
         GameObject RollBallMapFrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Map, "RollBallMap");
         GameObject RollBallMap = GameObject.Instantiate(RollBallMapFrefab);
         RollBallMap.name = RollBallMapFrefab.name;
-        Destroy(this.gameObject);
 
         Transform camera = TransformHelper.FindChild(RollBallMap.transform, "Camera");
         camera.gameObject.AddComponent<FollowTarget>();
@@ -41,7 +47,6 @@ public class RiverSidePointView_Ctrl: UICtrl
         }
 
         UIMgr.Instance.ShowUI("RollBallScoreView");
-        PlayerGO.SetActive(false);
-
+        PlayerStatus.PlayerGO.SetActive(false);
     }
 }

@@ -631,6 +631,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RollBallScoreView
       objectReference: {fileID: 0}
+    - target: {fileID: 5265542704349642107, guid: 6ddba8ac645d540b08f5bec1e38e35c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ddba8ac645d540b08f5bec1e38e35c4, type: 3}
 --- !u!1 &404470230 stripped

@@ -87,7 +87,7 @@ namespace CaiLu_LegendOfValmosian
 
         }
 
-        public  void AddHealth(int i)
+        public void AddHealth(int i)
         {
             this.HP = ((this.HP += i) <= 10) ? this.HP + i :this.HP = 10;
 

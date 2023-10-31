@@ -19,5 +19,6 @@ public class GressLandPoint_Ctrl: UICtrl
     void onClick()
     {
         UIMgr.Instance.ShowUI(this.gameObject.name + "View");
+        Destroy(this.gameObject);
     }
 }

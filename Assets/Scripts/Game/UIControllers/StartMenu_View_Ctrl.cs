@@ -52,7 +52,7 @@ public class StartMenu_View_Ctrl: UICtrl
         PlayerFollowCamera.GetComponent<CinemachineVirtualCamera>().Follow = CineMachineTarget.transform;
 
         //生成检查点
-        GameObject CheckPoint = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Prop, "CheckPoint");
+        GameObject CheckPoint = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "CheckPoint");
         GameObject CP = GameObject.Instantiate(CheckPoint);
         CP.name = CheckPoint.name;
         for(int i = 0;i< CheckPoint.transform.childCount; i++)

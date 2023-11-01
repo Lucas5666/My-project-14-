@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float shootSpeed;
+    [SerializeField] private float shootSpeed = 50;
     [SerializeField] private float damage = 1.0f;
-    [SerializeField] private float lifetime;
+    [SerializeField] private float lifetime = 1;
 
     public LayerMask collisionLayerMask;
 
@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     {
         //当子弹发射过了lifetime秒后，子弹需要被销毁，避免一直在场景中消耗性能
         Destroy(gameObject, lifetime);
+        collisionLayerMask = LayerMask.GetMask("Enemy");
     }
 
     private void Update()
@@ -36,13 +37,13 @@ public class Bullet : MonoBehaviour
 
     private void HitEnemy(RaycastHit _hitInfo)
     {
-        IDamageable damageable = _hitInfo.collider.GetComponent<LivingEntity>();
+        EnemyInShootingGame damageable = _hitInfo.collider.GetComponent<EnemyInShootingGame>();
 
         _hitInfo.transform.Translate(-Vector3.forward);
         _hitInfo.transform.GetComponent<MeshRenderer>().material.color = Color.red;
 
         if (damageable != null)
-            damageable.TakenDamage(damage);
+            damageable.OnDamage(1);
 
         Destroy(gameObject);//当子弹击中敌人后，子弹需要被销毁
     }

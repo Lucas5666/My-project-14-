@@ -4,7 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public Wave[] waves;//List OJBK
+    public Wave[] waves;
 
     [Header("JUST FOR CHECK ! ! !")]
     [SerializeField] private Wave currentWave;//当前波
@@ -16,6 +16,14 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        enemyPrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props , "Enemy");
+        waves = new Wave[]
+        {
+            new Wave(3,2),
+            new Wave(6,1),
+            new Wave(10,0.5f),
+            new Wave(20,0.5f),
+        };
         NextWave();
     }
 
@@ -38,7 +46,12 @@ public class Spawner : MonoBehaviour
         if(waitSpawnNum > 0 && Time.time > nextSpawnTime)//间隔事件内，产生敌人
         {
             waitSpawnNum--;//等待生成的敌人 - 1
-            GameObject spawnEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);//生成新敌人
+            GameObject spawnEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            //Debug.Log(enemyPrefab.name);
+            spawnEnemy.AddComponent<EnemyInShootingGame>();
+            spawnEnemy.transform.SetParent(this.transform);
+
+            //生成新敌人
             //每当生成新的敌人，就要将这个敌人的”阵亡事件处理器“【【订阅】】到事件onDeath上
             spawnEnemy.GetComponent<EnemyInShootingGame>().onDeath += EnemyDeath;//CORE
 

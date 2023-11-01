@@ -9,7 +9,7 @@ public class MedalsCheck : MonoBehaviour
     {
 
         //比较勋章数量 符合要求将设置碰撞器为触发器 玩家可以通过
-        if (PlayerStatus.PlayerGO.GetComponent<PlayerStatus>().medalNum >= numberOfCheck)
+        if (PlayerStatus.medalNum >= numberOfCheck)
         {
             block.transform.GetComponent<MeshCollider>().isTrigger = true;
             Time.timeScale = 1;

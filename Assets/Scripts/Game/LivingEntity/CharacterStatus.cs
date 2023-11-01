@@ -13,6 +13,11 @@ namespace CaiLu_LegendOfValmosian
         /// <summary>
         /// 攻击距离
         /// </summary>
+        ///
+        public event Action onDeath;
+
+        protected bool isDead;
+
         public int attackDistance;
 
         /// <summary>
@@ -53,7 +58,13 @@ namespace CaiLu_LegendOfValmosian
         /// <summary>
         /// 死亡
         /// </summary>
-        abstract public void Dead();
+        public void Dead()
+        {
+            isDead = true;
+            Destroy(this.gameObject);
+            if (onDeath != null)
+                onDeath();
+        }
 
         virtual public void OnDamage(int damageVal)
         {

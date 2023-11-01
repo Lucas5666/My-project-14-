@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using CaiLu_LegendOfValmosian;
 
 public class MonsterPlatformView_Ctrl: UICtrl 
- {  
+ {
+    public static float BeforeCharHealth;
  
 	public override void Awake() 
 	{
@@ -13,13 +14,15 @@ public class MonsterPlatformView_Ctrl: UICtrl
 	}
     void Start()
     {
+        BeforeCharHealth = TransformHelper.FindChild(UIMgr.canvas, "HealthBar").GetComponent<Slider>().value;
+
         this.AddButtonListener("DoIt", OnDoitClick);
         this.AddButtonListener("Exit", OnExitClick);
     }
 
     void OnDoitClick()
     {
-        InitBreakBricksGame();
+        InitShootingGame();
         Destroy(this.gameObject);
 
     }
@@ -29,24 +32,30 @@ public class MonsterPlatformView_Ctrl: UICtrl
         Destroy(this.gameObject);
     }
 
-    void InitBreakBricksGame()
+    public static void InitShootingGame()
     {
         GameObject ShootingGameMapFrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Map, "ShootingGameMap");
         GameObject ShootingGameMap = GameObject.Instantiate(ShootingGameMapFrefab);
         ShootingGameMap.name = ShootingGameMapFrefab.name;
 
         Transform camera = TransformHelper.FindChild(ShootingGameMap.transform, "ShootingGameCamera");
-        //camera.gameObject.AddComponent<Movement>();
-        //camera.gameObject.AddComponent<Fire>();
-        ////camera.gameObject.AddComponent<Dyeing>();
-        //camera.gameObject.AddComponent<ScoreCheck>();
+        camera.gameObject.AddComponent<FollowTarget>();
+        //camera.gameObject.AddComponent<ScoreCheck1>();
 
-        //foreach (var item in GameObject.FindGameObjectsWithTag("Bricks"))
-        //{
-        //    item.gameObject.AddComponent<Dyeing>();
-        //}
+        Transform player = TransformHelper.FindChild(ShootingGameMap.transform, "Player");
+        player.gameObject.AddComponent<PlayerController>();
+        player.gameObject.AddComponent<ScoreCheck1>();
 
-        //UIMgr.Instance.ShowUI("BreakBricksScore");
+
+        Transform Gun = TransformHelper.FindChild(player, "Gun");
+        Gun.gameObject.AddComponent<GunController>();
+
+        foreach (var item in GameObject.FindGameObjectsWithTag("Spawner"))
+        {
+            item.gameObject.AddComponent<Spawner>();
+        }
+
+        //UIMgr.Instance.ShowUI("ShootingGameHealth");
 
         PlayerStatus.PlayerGO.SetActive(false);
     }

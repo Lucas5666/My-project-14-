@@ -7,7 +7,7 @@ public enum AssetsType
     UI = 0,
     Map = 1,
     Char = 2,
-    Prop = 3,
+    Props = 3,
     Skills = 4
 }
 public class ResMgr : UnitySingleton<ResMgr>
@@ -24,7 +24,7 @@ public class ResMgr : UnitySingleton<ResMgr>
         if (true)
         {
             string path = "Assets/AssetsPackage/" + name ;
-            Debug.Log(path);
+            //Debug.Log(path);
             UnityEngine.Object target = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(path);
             return (T)target;
         }
@@ -46,7 +46,7 @@ public class ResMgr : UnitySingleton<ResMgr>
             case AssetsType.Char:
                 root = "Assets/AssetsPackage/Char/";
                 break;
-            case AssetsType.Prop:
+            case AssetsType.Props:
                 root = "Assets/AssetsPackage/Props/";
                 break;
             case AssetsType.Skills:
@@ -58,7 +58,7 @@ public class ResMgr : UnitySingleton<ResMgr>
         if (true)
         {
             string path = root + name + ".prefab";
-            Debug.Log(path);
+            //Debug.Log(path);
             UnityEngine.Object target = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(path);
             return (T)target;
         }

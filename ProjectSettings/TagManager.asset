@@ -8,6 +8,10 @@ TagManager:
   - Enemy_1
   - Food
   - Canvas
+  - MedalCount
+  - Bricks
+  - Bullet_BreakBricks
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - 
   - Character
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 

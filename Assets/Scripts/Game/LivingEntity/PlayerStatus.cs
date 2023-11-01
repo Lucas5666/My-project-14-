@@ -14,9 +14,9 @@ namespace CaiLu_LegendOfValmosian
     {
         private float timer;
         public static GameObject PlayerGO = null;
-        public Slider healthBar;
-        public int medalNum = 3;
-        public Text medalText;
+        public static Slider healthBar;
+        public static int medalNum = 3;
+        public  Text medalText;
 
 
 
@@ -35,7 +35,7 @@ namespace CaiLu_LegendOfValmosian
             PlayerGO = GameObject.FindWithTag("Player");
             healthBar = TransformHelper.FindChild(UIMgr.canvas, "HealthBar").GetComponent<Slider>();
             medalText = TransformHelper.FindChild(UIMgr.canvas, "MedalCount").GetComponent<Text>();
-
+            this.onDeath += Death;
         }
         private void Update()
         {
@@ -62,14 +62,14 @@ namespace CaiLu_LegendOfValmosian
             throw new System.NotImplementedException();
         }
 
-        public override void Dead()
+        public  void Death()
         {
             Debug.Log("死了");
         }
         public override void OnDamage(int damageVal)
         {
             base.OnDamage(damageVal);
-            print("PlayerStatus OnDamage ");
+            //print("PlayerStatus OnDamage ");
         }
 
         private void OnCollisionEnter(Collision collision)

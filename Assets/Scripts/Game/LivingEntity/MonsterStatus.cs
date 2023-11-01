@@ -17,10 +17,17 @@ namespace CaiLu_LegendOfValmosian
         /// </summary>
         public int GiveExp;
         //重写父类的死亡方法
-        public override void Dead()
+
+        private void Start()
+        {
+            this.onDeath += Death;
+
+        }
+        public  void Death()
         {
             Destroy(this.gameObject);
             print("MonsterStatus Dead ");
+            
         }
 
         //重写父类的伤害方法

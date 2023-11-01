@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 6726029030443536331}
   - component: {fileID: 6726029030443536328}
   m_Layer: 5
-  m_Name: WinToGameScene
+  m_Name: WinAndBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

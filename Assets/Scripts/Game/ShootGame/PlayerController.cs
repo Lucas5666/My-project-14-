@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
+using CaiLu_LegendOfValmosian;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerController : LivingEntity
+public class PlayerController : CharacterStatus
 {
     private Rigidbody rb;
     private Vector3 moveInput;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed = 8;
     private float timer;
+    private Camera cam;
 
     //重写父方法 
-    protected override void Start()
+    protected  void Start()
     {
-        base.Start();
+        HP = MaxHP;
         rb = GetComponent<Rigidbody>();
+        cam = TransformHelper.FindChild(this.transform.parent, "ShootingGameCamera").GetComponent<Camera>();
+        this.onDeath += Deadth;
+
     }
 
     //移动并注视鼠标位置 时间计时器
@@ -32,7 +37,7 @@ public class PlayerController : LivingEntity
     //注视鼠标的位置
     private void LookAtCursor()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         Plane plane = new Plane(Vector3.up, Vector3.zero);
 
         float distToGround;
@@ -50,9 +55,15 @@ public class PlayerController : LivingEntity
     {
         if (collision.transform.CompareTag("Enemy_1") && timer >0.3f)
         {
-            TakenDamage(2.0f);
+            OnDamage(1);
             this.transform.Translate(-new Vector3(0, 0, 0.4f));
             timer = 0;
         }
+    }
+
+    public  void Deadth()
+    {
+        UIMgr.Instance.ShowUI("ShootingGameFailedView");
+        PlayerStatus.PlayerGO.GetComponent<PlayerStatus>().HP = (int)MonsterPlatformView_Ctrl.BeforeCharHealth;
     }
 }

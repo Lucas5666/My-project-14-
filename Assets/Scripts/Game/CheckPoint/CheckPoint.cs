@@ -23,7 +23,7 @@ public class CheckPoint : MonoBehaviour
         //Debug.Log("开始碰撞了");
         if (other.gameObject.name == target.gameObject.name)
         {
-            Debug.Log("hh");
+            //Debug.Log("hh");
             UIMgr.Instance.ShowUI(this.gameObject.name);
         }
         //Debug.Log("碰撞结束了");

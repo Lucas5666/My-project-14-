@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 4416926081852918481, guid: baee7a0a5f9384355a596614ef4db7c2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: baee7a0a5f9384355a596614ef4db7c2,
         type: 3}
@@ -1416,6 +1416,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630976030147542304, guid: 38b14750d717e4397a9864e7c57522b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519612820065196856, guid: 38b14750d717e4397a9864e7c57522b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534251336645115706, guid: 38b14750d717e4397a9864e7c57522b2,
         type: 3}
       propertyPath: m_DrawTreesAndFoliage
@@ -1529,7 +1539,7 @@ PrefabInstance:
     - target: {fileID: 4932981427937959191, guid: 38b14750d717e4397a9864e7c57522b2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5391948184163227556, guid: 38b14750d717e4397a9864e7c57522b2,
         type: 3}
@@ -2322,7 +2332,7 @@ PrefabInstance:
     - target: {fileID: 7472724534413959692, guid: f67bfda909bc84ae9a5af83802996cb7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f67bfda909bc84ae9a5af83802996cb7, type: 3}

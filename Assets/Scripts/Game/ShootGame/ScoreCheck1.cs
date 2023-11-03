@@ -38,7 +38,12 @@ public class ScoreCheck1 : MonoBehaviour
             UIMgr.Instance.ShowUI("ShootingGameWinView");
             PlayerStatus.PlayerGO.GetComponent<PlayerStatus>().AddHealth(10);
             i = 0;
-            
+            if (!MedalRecord.ShootingGame)
+            {
+                PlayerStatus.medalNum++;
+                MedalRecord.ShootingGame = true;
+            }
+
         }
 
 

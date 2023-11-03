@@ -15,7 +15,8 @@ namespace CaiLu_LegendOfValmosian
         private float timer;
         public static GameObject PlayerGO = null;
         public static Slider healthBar;
-        public static int medalNum = 3;
+        [SerializeField]
+        public static int medalNum;
         public  Text medalText;
 
 

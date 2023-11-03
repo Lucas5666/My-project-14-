@@ -60,8 +60,22 @@ public class EnemySpawn : MonoBehaviour
     {
         GeneratePointIndex = Random.Range(0, GeneratePoint.Length);
         GameObject enemyGo = Instantiate(enemy, GeneratePoint[GeneratePointIndex].transform.position, Quaternion.identity);
-        enemyGo.AddComponent<Enemy>();
-        //enemyGo.AddComponent<MonsterStatus>();
+        //enemyGo.AddComponent<Enemy>();
+        enemyGo.AddComponent<MonsterStatus>();
+        if (enemy.name == "Slime_1")
+        {
+            enemyGo.GetComponent<MonsterStatus>().HP = 5;
+        }
+
+        if (enemy.name == "Boss_1" || enemy.name == "Monster_1" || enemy.name == "Monster_2" || enemy.name == "Monster_3")
+        {
+            enemyGo.AddComponent<EnemyMovment>();
+            enemyGo.GetComponent<MonsterStatus>().HP = 10;
+        }
+        if (enemy.name == "Monster_1" || enemy.name == "Monster_2" || enemy.name == "Monster_3")
+        {
+            enemyGo.AddComponent<AddMedal>();
+        }
         enemyGo.AddComponent<NavMeshAgent>();
         enemyGo.GetComponent<NavMeshAgent>().SetDestination(target.position);
     }

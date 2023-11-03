@@ -4,30 +4,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace CaiLu_LegendOfValmosian
 {
     /// <summary>
     /// 小怪状态
     /// </summary>
+    ///
+
+    [RequireComponent(typeof(NavMeshAgent))]
     public class MonsterStatus : CharacterStatus
     {
         /// <summary>
         /// 贡献经验值
         /// </summary>
         public int GiveExp;
-        //重写父类的死亡方法
 
-        private void Start()
+        public NavMeshAgent navMeshAgent;
+        public Transform target;
+
+        //获取敌人的导航网格 将敌人死亡时的方法订阅到敌人死亡事件
+        protected void Start()
         {
-            this.onDeath += Death;
+            //base.Start();
+            this.onDeath += EnemyDeath;
+            navMeshAgent = GetComponent<NavMeshAgent>();
+            if (GameObject.FindWithTag("Player").transform != null)
+            {
+                target = PlayerStatus.PlayerGO.transform;
+            }
 
         }
-        public  void Death()
+
+        //重写父类的死亡方法
+        private void EnemyDeath()
         {
             Destroy(this.gameObject);
             print("MonsterStatus Dead ");
-            
+        }
+
+        //设置敌人的注视方向 以及移动方向 检测玩家是否按下攻击按钮 计时器
+        void Update()
+        {
+            if (this.gameObject.activeInHierarchy && GameObject.FindWithTag("Player") != null)
+            {
+                this.transform.LookAt(target);
+                navMeshAgent.SetDestination(target.position);
+            }
+
         }
 
         //重写父类的伤害方法

@@ -30,10 +30,13 @@ public class StartMenu_View_Ctrl: UICtrl
     void OnClickPlay()
     {
         Debug.Log("Play被按了！！！");
-        //生成地图和物体以及In_GameUI
+        //生成地图和物体以及In_GameUI以及Block脚本
         GameObject mapPrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Map, "Map_1");
         GameObject map1 = GameObject.Instantiate(mapPrefab);
         map1.name = mapPrefab.name;
+        TransformHelper.FindChild(map1.transform, "ElfPoolPointENT").gameObject.AddComponent<BlockHide>();
+        TransformHelper.FindChild(map1.transform, "DuelArenaPointENT").gameObject.AddComponent<BlockHide>();
+
         Destroy(this.gameObject);
         UIMgr.Instance.ShowUI("In_Game_Page_view");
         //UIMgr.Instance.ShowUI("ChatBox_view");
@@ -60,11 +63,14 @@ public class StartMenu_View_Ctrl: UICtrl
             CP.transform.GetChild(i).GetChild(0).gameObject.AddComponent<CheckPoint>();
         }
 
-        //生成boss和slime小怪并添加脚本
+        //生成boss并添加脚本
         GameObject bossObj = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Boss");
         GameObject boss = GameObject.Instantiate(bossObj);
         boss.name = bossObj.name;
         GameObject boss_1 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Boss_1");
+        GameObject Monster_1 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Monster_1");
+        GameObject Monster_2 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Monster_2");
+        GameObject Monster_3 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Monster_3");
 
         for (int i = 0; i < boss.transform.childCount; i+=2)
         {
@@ -81,7 +87,13 @@ public class StartMenu_View_Ctrl: UICtrl
         for(int i = 1; i < boss.transform.childCount; i += 2)
         {
             boss.transform.GetChild(i).gameObject.AddComponent<EnemySpawn>();
-            boss.transform.GetChild(i).GetComponent<EnemySpawn>().enemy = boss_1;
+            if(i == 1)
+                boss.transform.GetChild(i).GetComponent<EnemySpawn>().enemy = Monster_1;
+            if (i == 3)
+                boss.transform.GetChild(i).GetComponent<EnemySpawn>().enemy = Monster_2;
+            if (i == 5)
+                boss.transform.GetChild(i).GetComponent<EnemySpawn>().enemy = Monster_3;
+
             boss.transform.GetChild(i).GetComponent<EnemySpawn>().maxCount = 1;
 
             for (int j = 0; j < boss.transform.GetChild(i).transform.childCount; j++)
@@ -91,7 +103,7 @@ public class StartMenu_View_Ctrl: UICtrl
 
         }
 
-        //添加小怪及脚本
+        //添加小怪slime及脚本
         GameObject slimeObj = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Slime");
         GameObject slime = GameObject.Instantiate(slimeObj);
         slime.name = slimeObj.name;

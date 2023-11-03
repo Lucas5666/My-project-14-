@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class SummitPoint_Ctrl: UICtrl 
+public class FinalPointView_Ctrl: UICtrl 
  {
 
     public override void Awake()
@@ -12,12 +12,11 @@ public class SummitPoint_Ctrl: UICtrl
     }
     void Start()
     {
-
-        this.GetComponent<Button>().onClick.AddListener(onClick);
+        this.AddButtonListener("Exit", onClickExit);
     }
 
-    void onClick()
+    void onClickExit()
     {
-        UIMgr.Instance.ShowUI(this.gameObject.name + "View");
+        Destroy(this.gameObject);
     }
 }

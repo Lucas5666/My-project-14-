@@ -19,10 +19,10 @@ public class RollBallWinPanelView_Ctrl: UICtrl
 
     void onClick()
 	{
-		Destroy(GameObject.Find("RollBallMap"));
+		//Destroy(GameObject.Find("RollBallMap"));
 		Destroy(this.gameObject);
         Time.timeScale = 1;
-        Destroy(TransformHelper.FindChild(UIMgr.canvas, "RollBallScoreView").gameObject);
+        //Destroy(TransformHelper.FindChild(UIMgr.canvas, "RollBallScoreView").gameObject);
         PlayerStatus.PlayerGO.SetActive(true);
 
 

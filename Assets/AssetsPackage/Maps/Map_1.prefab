@@ -294,6 +294,91 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4932981427937959188}
     m_Modifications:
+    - target: {fileID: 3457979956645234800, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 272.20496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234800, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 272.20496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234800, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 272.20496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234800, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 374.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234800, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234800, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -317
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234802, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234812, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Name
+      value: ElfPoolPointENTBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956645234812, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449329, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Name
+      value: DuelArenaPointENTBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449329, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449341, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 246.95758
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449341, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 246.95758
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449341, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 246.95758
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449341, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449341, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457979956863449343, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3614742225934333938, guid: 7068e0be8eb804e09a6df57092e42a06,
         type: 3}
       propertyPath: m_Name
@@ -353,6 +438,81 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328100, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Name
+      value: ElfPoolPointENT
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328103, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328105, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 280.3711
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328105, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 280.3711
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328105, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 280.3711
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328105, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328105, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742226395328105, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -317
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742227176420584, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Name
+      value: DuelArenaPointENT
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742227176420587, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742227176420589, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 254.51448
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742227176420589, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 254.51448
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742227176420589, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 254.51448
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742227176420589, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614742227176420589, guid: 7068e0be8eb804e09a6df57092e42a06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 144.00002
       objectReference: {fileID: 0}
     - target: {fileID: 5788235393116901232, guid: 7068e0be8eb804e09a6df57092e42a06,
         type: 3}

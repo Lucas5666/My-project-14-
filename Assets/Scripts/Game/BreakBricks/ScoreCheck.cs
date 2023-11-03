@@ -57,6 +57,11 @@ public class ScoreCheck : MonoBehaviour
             Destroy(GameObject.Find("BreakBricksMap"));
             Destroy(TransformHelper.FindChild(UIMgr.canvas, "BreakBricksScore").gameObject);
             PlayerStatus.PlayerGO.GetComponent<PlayerStatus>().AddHealth(10);
+            if (!MedalRecord.BreakBricksGame)
+            {
+                PlayerStatus.medalNum++;
+                MedalRecord.BreakBricksGame = true;
+            }
             //countDownSecond = -1;
             //判断当前关卡是否 已经加过勋章 如果没有才添加勋章
             //if(PlayerPrefs.GetInt("BreakBricksMedal") == 0)

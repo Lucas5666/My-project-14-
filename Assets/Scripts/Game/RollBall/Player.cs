@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CaiLu_LegendOfValmosian;
 public class Player : MonoBehaviour
 {
 
@@ -49,18 +50,17 @@ public class Player : MonoBehaviour
         if (score == 12 && countDownSecond > 0)
         {
             //调出胜利面板
-            //winPanel.SetActive(true);
             UIMgr.Instance.ShowUI("RollBallWinPanelView");
+            Destroy(GameObject.Find("RollBallMap"));
+            Destroy(TransformHelper.FindChild(UIMgr.canvas, "RollBallScoreView").gameObject);
+            PlayerStatus.PlayerGO.GetComponent<PlayerStatus>().AddHealth(10);
+            if (!MedalRecord.BollBAllGame)
+            {
+                PlayerStatus.medalNum++;
+                MedalRecord.BollBAllGame = true;
+            }
             countDownSecond = -1;
-            //调用加血方法 给角色血加满
-            ////AddHealth.Add();
-            //判断当前关卡是否 已经加过勋章 如果没有才添加勋章
-            //if (PlayerPrefs.GetInt("RollBallMedal") == 0)
-            //{
-            //    PlayerPrefs.SetInt("PlayerMedal", PlayerPrefs.GetInt("PlayerMedal") + 1);
-            //    PlayerPrefs.SetInt("RollBallMedal", 1);
-
-            //}
+            
 
         }
         //失败 调出失败面板
@@ -68,6 +68,8 @@ public class Player : MonoBehaviour
         {
             //failedPanel.SetActive(true);
             UIMgr.Instance.ShowUI("RollBallFailedPanelView");
+            Destroy(GameObject.Find("RollBallMap"));
+            Destroy(TransformHelper.FindChild(UIMgr.canvas, "RollBallScoreView").gameObject);
             countDownSecond = 9999999;
 
         }

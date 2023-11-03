@@ -11,7 +11,18 @@ public class MedalsCheck : MonoBehaviour
         //比较勋章数量 符合要求将设置碰撞器为触发器 玩家可以通过
         if (PlayerStatus.medalNum >= numberOfCheck)
         {
-            block.transform.GetComponent<MeshCollider>().isTrigger = true;
+            print("MedalsCheck1");
+            if (block.transform.GetComponent<Collider>() != null)
+            {
+                block.transform.GetComponent<Collider>().isTrigger = true;
+
+            }
+            //if(block.transform.GetComponent<SphereCollider>() != null)
+            //{
+            //    block.transform.GetComponent<SphereCollider>().isTrigger = true;
+            //}
+            print("MedalsCheck1......");
+
             Time.timeScale = 1;
         }
         else

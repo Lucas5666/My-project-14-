@@ -65,7 +65,9 @@ namespace CaiLu_LegendOfValmosian
 
         public  void Death()
         {
-            Debug.Log("死了");
+            //Debug.Log("死了");
+            UIMgr.Instance.ShowUI("DeathView");
+
         }
         public override void OnDamage(int damageVal)
         {

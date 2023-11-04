@@ -70,6 +70,7 @@ public class EnemySpawn : MonoBehaviour
         if (enemy.name == "Boss_1" || enemy.name == "Monster_1" || enemy.name == "Monster_2" || enemy.name == "Monster_3")
         {
             enemyGo.AddComponent<EnemyMovment>();
+            enemyGo.AddComponent<EnemyShooting>();
             enemyGo.GetComponent<MonsterStatus>().HP = 10;
         }
         if (enemy.name == "Monster_1" || enemy.name == "Monster_2" || enemy.name == "Monster_3")

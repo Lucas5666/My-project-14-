@@ -43,6 +43,8 @@ public class ScoreCheck1 : MonoBehaviour
                 PlayerStatus.medalNum++;
                 MedalRecord.ShootingGame = true;
             }
+            TransformHelper.FindChild(PlayerStatus.PlayerGO.transform, "Gun").gameObject.AddComponent<PlayerGun>();
+
 
         }
 

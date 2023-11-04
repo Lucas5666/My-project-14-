@@ -54,7 +54,7 @@ public class StartMenu_View_Ctrl: UICtrl
         GameObject PlayerFollowCamera = GameObject.Find("PlayerFollowCamera");
         PlayerFollowCamera.GetComponent<CinemachineVirtualCamera>().Follow = CineMachineTarget.transform;
 
-        //生成检查点
+        //生成检查点和加血点
         GameObject CheckPoint = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "CheckPoint");
         GameObject CP = GameObject.Instantiate(CheckPoint);
         CP.name = CheckPoint.name;
@@ -62,6 +62,11 @@ public class StartMenu_View_Ctrl: UICtrl
         {
             CP.transform.GetChild(i).GetChild(0).gameObject.AddComponent<CheckPoint>();
         }
+
+        GameObject HeartSpawnerPrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "HeartSpawner");
+        GameObject HeartSpawner = GameObject.Instantiate(HeartSpawnerPrefab);
+        HeartSpawner.name = HeartSpawnerPrefab.name;
+        HeartSpawner.AddComponent<HeartSpawner>();
 
         //生成boss并添加脚本
         GameObject bossObj = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Boss");

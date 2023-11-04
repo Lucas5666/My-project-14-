@@ -19,5 +19,7 @@ public class DeathView_Ctrl: UICtrl
 	{
 		UIMgr.Instance.ShowUI("StartMenu_View");
 		Destroy(this.gameObject);
+		Destroy(GameObject.Find("Map_1"));
+		Destroy(GameObject.Find("Char"));
 	}
 }

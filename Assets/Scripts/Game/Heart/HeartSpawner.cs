@@ -13,6 +13,7 @@ public class HeartSpawner : MonoBehaviour
         {
             print(this.transform.childCount);
             GameObject heart = Instantiate(heartPrefab, this.transform.GetChild(i).position, Quaternion.identity);
+            heart.transform.SetParent(this.transform);
             heart.AddComponent<AddHealthPoint>();
             heart.AddComponent<Rotation>();
 

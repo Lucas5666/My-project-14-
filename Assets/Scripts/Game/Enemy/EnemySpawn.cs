@@ -61,6 +61,7 @@ public class EnemySpawn : MonoBehaviour
         GeneratePointIndex = Random.Range(0, GeneratePoint.Length);
         GameObject enemyGo = Instantiate(enemy, GeneratePoint[GeneratePointIndex].transform.position, Quaternion.identity);
         //enemyGo.AddComponent<Enemy>();
+        enemyGo.transform.SetParent(this.transform);
         enemyGo.AddComponent<MonsterStatus>();
         if (enemy.name == "Slime_1")
         {

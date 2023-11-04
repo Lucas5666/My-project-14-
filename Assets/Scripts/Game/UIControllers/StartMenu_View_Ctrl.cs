@@ -55,23 +55,28 @@ public class StartMenu_View_Ctrl: UICtrl
         PlayerFollowCamera.GetComponent<CinemachineVirtualCamera>().Follow = CineMachineTarget.transform;
 
         //生成检查点和加血点
-        GameObject CheckPoint = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "CheckPoint");
-        GameObject CP = GameObject.Instantiate(CheckPoint);
-        CP.name = CheckPoint.name;
-        for(int i = 0;i< CheckPoint.transform.childCount; i++)
+        //GameObject CheckPoint = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "CheckPoint");
+        //GameObject CP = GameObject.Instantiate(CheckPoint);
+        //CP.name = CheckPoint.name;
+        GameObject CheckPoint = TransformHelper.FindChild(map1.transform, "CheckPoint").gameObject;
+
+        for (int i = 0;i< CheckPoint.transform.childCount; i++)
         {
-            CP.transform.GetChild(i).GetChild(0).gameObject.AddComponent<CheckPoint>();
+            CheckPoint.transform.GetChild(i).GetChild(0).gameObject.AddComponent<CheckPoint>();
         }
 
-        GameObject HeartSpawnerPrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "HeartSpawner");
-        GameObject HeartSpawner = GameObject.Instantiate(HeartSpawnerPrefab);
-        HeartSpawner.name = HeartSpawnerPrefab.name;
+        //GameObject HeartSpawnerPrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "HeartSpawner");
+        //GameObject HeartSpawner = GameObject.Instantiate(HeartSpawnerPrefab);
+        //HeartSpawner.name = HeartSpawnerPrefab.name;
+        GameObject HeartSpawner = TransformHelper.FindChild(map1.transform, "HeartSpawner").gameObject;
         HeartSpawner.AddComponent<HeartSpawner>();
 
         //生成boss并添加脚本
-        GameObject bossObj = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Boss");
-        GameObject boss = GameObject.Instantiate(bossObj);
-        boss.name = bossObj.name;
+        //GameObject bossObj = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Boss");
+        //GameObject boss = GameObject.Instantiate(bossObj);
+        //boss.name = bossObj.name;
+        GameObject boss = TransformHelper.FindChild(map1.transform, "Boss").gameObject;
+
         GameObject boss_1 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Boss_1");
         GameObject Monster_1 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Monster_1");
         GameObject Monster_2 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Monster_2");
@@ -109,9 +114,11 @@ public class StartMenu_View_Ctrl: UICtrl
         }
 
         //添加小怪slime及脚本
-        GameObject slimeObj = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Slime");
-        GameObject slime = GameObject.Instantiate(slimeObj);
-        slime.name = slimeObj.name;
+        //GameObject slimeObj = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Slime");
+        //GameObject slime = GameObject.Instantiate(slimeObj);
+        //slime.name = slimeObj.name;
+        GameObject slime = TransformHelper.FindChild(map1.transform, "Slime").gameObject;
+
         GameObject slime_1 = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Slime_1");
         //GameObject slimeIns = GameObject.Instantiate(slime_1);
         //slimeIns.name = slime_1.name;

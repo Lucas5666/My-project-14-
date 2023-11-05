@@ -39,7 +39,6 @@ public class StartMenu_View_Ctrl: UICtrl
 
         Destroy(this.gameObject);
         UIMgr.Instance.ShowUI("In_Game_Page_view");
-        //UIMgr.Instance.ShowUI("ChatBox_view");
 
         //生成角色
         GameObject Charfab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Char, "Char");
@@ -148,4 +147,5 @@ public class StartMenu_View_Ctrl: UICtrl
     {
         Debug.Log("Exit被按了！！！");
     }
+
 }

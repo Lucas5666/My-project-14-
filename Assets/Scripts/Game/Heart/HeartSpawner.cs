@@ -11,9 +11,9 @@ public class HeartSpawner : MonoBehaviour
         heartPrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "Heart");
         for (int i = 0; i < this.transform.childCount; i++)
         {
-            print(this.transform.childCount);
+            //print(this.transform.childCount);
             GameObject heart = Instantiate(heartPrefab, this.transform.GetChild(i).position, Quaternion.identity);
-            heart.transform.SetParent(this.transform);
+            heart.transform.SetParent(this.transform.GetChild(i));
             heart.AddComponent<AddHealthPoint>();
             heart.AddComponent<Rotation>();
 

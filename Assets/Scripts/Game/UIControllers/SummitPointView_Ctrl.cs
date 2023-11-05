@@ -24,5 +24,6 @@ public class SummitPointView_Ctrl: UICtrl
             PlayerStatus.medalNum++;
             MedalRecord.SummitPoint = true;
         }
+        Destroy(this.gameObject);
     }
 }

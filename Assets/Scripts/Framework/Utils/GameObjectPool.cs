@@ -3,6 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 
+public interface IResetable
+{
+    void OnReset();
+}
 public class GameObjectPool : UnitySingleton<GameObjectPool>
 {
 
@@ -31,6 +35,10 @@ public class GameObjectPool : UnitySingleton<GameObjectPool>
         }
         //作为池物体的子物体
         temoGo.transform.parent = this.transform;
+        //初始化物体
+        if(temoGo.GetComponent<IResetable>() != null)
+            temoGo.GetComponent<IResetable>().OnReset();
+
         return temoGo;//返回物体
     }
     private GameObject FindUsable(string key)
@@ -64,6 +72,12 @@ public class GameObjectPool : UnitySingleton<GameObjectPool>
             {Destroy(cache[key][i]); }
             //移除了对象的地址
             cache.Remove(key);
+
+            //释放场景中 的游戏物体
+            for (int i = cache[key].Count - 1; i >= 0; i--)
+            { Destroy(cache[key][i]); }
+            //移除了对象的地址
+            cache.Remove(key);
         }
     }
     //3.2释放全部 循环调用Clear(string key)
@@ -86,15 +100,23 @@ public class GameObjectPool : UnitySingleton<GameObjectPool>
     {
         go.SetActive(false);//本质：画面小时 设置属性
     }
-    //4.2延时回收对象 等待一定的时间 协程
-    public void CollectObject(GameObject go, float delay)
+
+    public void CollectObject(GameObject go, float delay = 0)
     {
         StartCoroutine(CollectDelay(go, delay));
+
     }
+
+    //4.2延时回收对象 等待一定的时间 协程
+    //public void CollectObject(GameObject go, float delay)
+    //{
+    //    StartCoroutine(CollectDelay(go, delay));
+    //}
     private IEnumerator CollectDelay(GameObject go, float delay)
     {
         yield return new WaitForSeconds(delay);
-        CollectObject(go);
+        go.SetActive(false);
+
     }
 }
 

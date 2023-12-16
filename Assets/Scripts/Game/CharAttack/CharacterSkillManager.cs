@@ -22,7 +22,7 @@ namespace CaiLu_LegendOfValmosian
         private void Start()
         {
             //为skills中的 skill的有些字段初始化！
-            foreach(var skill in skills)
+            foreach (var skill in skills)
             {
                 //skill.prefabName==null||skill.prefabName==""
                 //string.IsNullOrEmpty(skill.prefabName)

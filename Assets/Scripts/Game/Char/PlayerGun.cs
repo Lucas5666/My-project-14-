@@ -3,11 +3,11 @@
 public class PlayerGun : MonoBehaviour
 {
     private Transform firePoint;
-    private GameObject projectilePrefab;
+    private GameObject bullet;
     private Transform aim;
     private float shootSpeed = 50;
     private float bulletSpeed = 100;
-    [SerializeField] private float fireRate = 0.1f;
+    [SerializeField] private float fireRate = 0.25f;
 
     private float timer;
 
@@ -15,7 +15,7 @@ public class PlayerGun : MonoBehaviour
     {
         firePoint = this.transform;
         aim = TransformHelper.FindChild(this.transform.parent, "Aim");
-        projectilePrefab = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "Bullet_2");
+        bullet = ResMgr.Instance.GetMapAssets<GameObject>(AssetsType.Props, "Bullet_2");
     }
 
     private void Update()
@@ -35,14 +35,19 @@ public class PlayerGun : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > fireRate)
         {
-            //生成子弹 
-            GameObject spawnProjectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            spawnProjectile.AddComponent<PlayerBullet>();
-            //让子弹朝着一定的方向和速度运动
-            spawnProjectile.transform.GetComponent<Rigidbody>().AddForce((aim.transform.position - this.transform.position) * bulletSpeed, ForceMode.Impulse);
-            //计时器归零
-            timer = 0;
+            ////生成子弹 
+            //GameObject spawnProjectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            //spawnProjectile.AddComponent<PlayerBullet>();
+            ////让子弹朝着一定的方向和速度运动
+            //spawnProjectile.transform.GetComponent<Rigidbody>().AddForce((aim.transform.position - this.transform.position) * bulletSpeed, ForceMode.Impulse);
+            ////计时器归零
+            //timer = 0;
 
+
+            GameObject obj = GameObjectPool.Instance.CreateObject("bullet", bullet, transform.position, transform.rotation);
+            obj.AddComponent<PlayerBullet>();
+            obj.transform.GetComponent<Rigidbody>().AddForce((aim.transform.position - this.transform.position) * bulletSpeed, ForceMode.Impulse);
+            timer = 0;
         }
     }
 

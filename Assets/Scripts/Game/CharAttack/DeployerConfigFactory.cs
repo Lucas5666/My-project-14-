@@ -51,6 +51,7 @@ namespace CaiLu_LegendOfValmosian
             return new List<ITargetImpact>() 
             { 
                 new DamageTargetImpact()
+                //......
             }; 
         }
     }

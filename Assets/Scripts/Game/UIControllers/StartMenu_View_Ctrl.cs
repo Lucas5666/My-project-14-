@@ -46,6 +46,8 @@ public class StartMenu_View_Ctrl: UICtrl
         Char1.name = Charfab.name;
         Char1.AddComponent<Char_Control>();
         Char1.AddComponent<PlayerStatus>();
+        TransformHelper.FindChild(Char1.transform, "Gun").gameObject.AddComponent<PlayerGun>();
+
 
 
         //设置相机跟踪

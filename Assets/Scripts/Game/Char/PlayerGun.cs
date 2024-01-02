@@ -5,9 +5,11 @@ public class PlayerGun : MonoBehaviour
     private Transform firePoint;
     private GameObject bullet;
     private Transform aim;
+    [SerializeField]
     private float shootSpeed = 50;
-    private float bulletSpeed = 100;
-    [SerializeField] private float fireRate = 0.25f;
+    [SerializeField]
+    private float bulletSpeed = 7;
+    [SerializeField] private float fireRate = 0.5f;
 
     private float timer;
 
@@ -45,7 +47,11 @@ public class PlayerGun : MonoBehaviour
 
 
             GameObject obj = GameObjectPool.Instance.CreateObject("bullet", bullet, transform.position, transform.rotation);
-            obj.AddComponent<PlayerBullet>();
+            GameObjectPool.Instance.CollectObject(obj, 1);
+            if (!obj.GetComponent<PlayerBullet>())
+            {
+                obj.AddComponent<PlayerBullet>();
+            }
             obj.transform.GetComponent<Rigidbody>().AddForce((aim.transform.position - this.transform.position) * bulletSpeed, ForceMode.Impulse);
             timer = 0;
         }

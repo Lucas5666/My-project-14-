@@ -28,10 +28,10 @@ public class PlayerBullet : MonoBehaviour
     //    }
     //}
 
-    private void Start()
-    {
-       GameObjectPool.Instance.CollectObject(gameObject,1);
-    }
+    //private void Awake()
+    //{
+    //   GameObjectPool.Instance.CollectObject(gameObject,1);
+    //}
 
 
 
